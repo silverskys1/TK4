@@ -1,0 +1,505 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Arrays;
+public class TK4 {
+    public static void main(String[] args) {
+        System.out.println("Selamat Datang di Program Simulasi Kelompok 5");
+        System.out.println("Silahkan input range untuk data random yang akan diacak: ");
+        int[] hasilRandomData = randomData(); //Pilihan no.1
+            while(true) {
+                System.out.println("--Menu Utama--");
+                System.out.println("1. Ubah Random Data");
+                System.out.println("2. Simulasi Bubble Sort - Ascending dari Random Data");
+                System.out.println("3. Simulasi Selection Sort - Ascending dari Random Data");
+                System.out.println("4. Simulasi Bubble Sort - Descending dari Random Data");
+                System.out.println("5. Simulasi Selection Sort - Descending dari Random Data");
+                System.out.println("6. Keluar");
+                System.out.print("Masukkan Pilihan Anda : ");
+                int pilihanMenu = new Scanner(System.in).nextInt();
+                System.out.println("");
+                switch (pilihanMenu) {
+                    case 1:
+                        hasilRandomData = randomData(); //Pilihan no.1
+                        break;
+                    case 2:
+                        bubbleSortAscending(hasilRandomData); //Pilihan no.2
+                        break;
+                    case 3:
+                        selectionSortAscending(hasilRandomData); //Pilihan no.3
+                        break;
+                    case 4:
+                        bubbleSortDescending(hasilRandomData); //Pilihan no.4
+                        break;
+                    case 5:
+                        selectionSortDescending(hasilRandomData); //Pilihan no.5
+                        break;
+                    case 6:
+                        System.out.println("Terima kasih telah menggunakan program kami dari kelompok 5");
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("@@@ Mohon pilih di antara menu 1-6 @@@");
+                }
+            }
+        }
+    public static int[] randomData() {
+        System.out.print("Batas Bawah = ");
+        int min = new Scanner(System.in).nextInt();
+        System.out.print("Batas Atas = ");
+        int max = new Scanner(System.in).nextInt();
+        int randomTest1 = min + (int) (Math.random() * ((max - min) + 1));
+        int randomTest2 = min + (int) (Math.random() * ((max - min) + 1));
+        int randomTest3 = min + (int) (Math.random() * ((max - min) + 1));
+        int randomTest4 = min + (int) (Math.random() * ((max - min) + 1));
+        int randomTest5 = min + (int) (Math.random() * ((max - min) + 1));
+        int[] hasilRandomTest = {randomTest1, randomTest2, randomTest3, randomTest4, randomTest5};
+        System.out.print(hasilRandomTest[0] + "   " + hasilRandomTest[1] + "   " + hasilRandomTest[2] + "   ");
+        System.out.print(hasilRandomTest[3] + "   " + hasilRandomTest[4]);
+        System.out.println("");
+        System.out.println("");
+        return hasilRandomTest;
+    }
+
+    public static void bubbleSortAscending(int[] hasilRandomData) {
+        System.out.println("Simulasi Bubble Sort - Ascending");
+        int k = 1;
+        //1st pass
+        System.out.println("1st Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //1st pass - 1
+        int i = 0;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //1st pass - 2
+        i = 1;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //1st pass - 3
+        i = 2;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //1st pass - 4
+        i = 3;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 1st pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //2nd pass
+        System.out.println("2nd Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //2nd pass - 1
+        i = 0;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //2nd pass - 2
+        i = 1;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //2nd pass - 3
+        i = 2;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 2nd pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //3rd pass
+        System.out.println("3rd Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //3rd pass - 1
+        i = 0;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //3rd pass - 2
+        i = 1;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 3rd pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //4th pass
+        System.out.println("4th Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //4th pass - 1
+        i = 0;
+        if (hasilRandomData[i] > hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 4th pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+    }
+    public static void bubbleSortDescending(int[] hasilRandomData) {
+        System.out.println("Simulasi Bubble Sort - Descending");
+        int k = 1;
+        //1st pass
+        System.out.println("1st Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //1st pass - 1
+        int i = 0;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //1st pass - 2
+        i = 1;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //1st pass - 3
+        i = 2;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //1st pass - 4
+        i = 3;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 1st pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //2nd pass
+        System.out.println("2nd Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //2nd pass - 1
+        i = 0;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //2nd pass - 2
+        i = 1;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //2nd pass - 3
+        i = 2;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 2nd pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //3rd pass
+        System.out.println("3rd Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //3rd pass - 1
+        i = 0;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        //3rd pass - 2
+        i = 1;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        System.out.println("");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 3rd pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //4th pass
+        System.out.println("4th Pass");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        //4th pass - 1
+        i = 0;
+        if (hasilRandomData[i] < hasilRandomData[i + 1]) {
+            int temp = hasilRandomData[i];
+            hasilRandomData[i] = hasilRandomData[i + 1];
+            hasilRandomData[i + 1] = temp;
+        }
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The result of 4th pass : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+    }
+    public static void selectionSortAscending(int[] hasilRandomData){
+        System.out.println("Simulasi Selection Sort - Ascending");
+        System.out.println("Initial Data : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        int size = hasilRandomData.length;
+        //1st step - 0
+        System.out.println("1st Step");
+        int step = 0;
+        int min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] < hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        int temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //2nd step - 1
+        System.out.println("2nd Step");
+        step = 1;
+        min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] < hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //3rd step - 2
+        System.out.println("3rd Step");
+        step = 2;
+        min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] < hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //4th step - 3
+        System.out.println("4th Step - Final Result");
+        step = 3;
+        min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] < hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+    }
+    public static void selectionSortDescending(int[] hasilRandomData){
+        System.out.println("Simulasi Selection Sort - Descending");
+        System.out.println("Initial Data : ");
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        int size = hasilRandomData.length;
+        //1st step - 0
+        System.out.println("1st Step");
+        int step = 0;
+        int min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] > hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        int temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //2nd step - 1
+        System.out.println("2nd Step");
+        step = 1;
+        min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] > hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //3rd step - 2
+        System.out.println("3rd Step");
+        step = 2;
+        min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] > hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+        //4th step - 3
+        System.out.println("4th Step - Final Result");
+        step = 3;
+        min_idx = step;
+        for (int i = step + 1; i < size; i++) {
+            if (hasilRandomData[i] > hasilRandomData[min_idx]) {
+                min_idx = i;
+            }
+        }
+        temp = hasilRandomData[step];
+        hasilRandomData[step] = hasilRandomData[min_idx];
+        hasilRandomData[min_idx] = temp;
+        for (int p = 0; p < hasilRandomData.length; p++)
+            System.out.print(hasilRandomData[p] + " ");
+        System.out.println("");
+        System.out.println("");
+    }
+}
